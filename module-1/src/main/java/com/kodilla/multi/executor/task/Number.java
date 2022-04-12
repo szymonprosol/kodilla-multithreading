@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Task implements Runnable {
+public class Number implements Runnable {
 
     private static List<Integer> numbers1 = new ArrayList<>();
     private static List<Integer> numbers2 = new ArrayList<>();
@@ -19,12 +19,6 @@ public class Task implements Runnable {
     private void taskBody() {
         numbers1 = numbers();
         numbers2 = numbers();
-
-        for (int i = 0; i < numbers.size(); i++) {
-            numbers.add((long)numbers1.get(i) * (long)numbers2.get(i));
-            System.out.print("(long)numbers1.get(i) * (long)numbers2.get(i)");
-        }
-
     }
 
     private List<Integer> numbers() {

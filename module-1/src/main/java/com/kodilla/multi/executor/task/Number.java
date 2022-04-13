@@ -4,29 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Number implements Runnable {
+public class Number {
 
-    private static List<Integer> numbers1 = new ArrayList<>();
-    private static List<Integer> numbers2 = new ArrayList<>();
-    private static List<Long> numbers = new ArrayList<>();
     private Random random = new Random();
+    private List<Integer> numbers = new ArrayList<>();
+    private List<Integer> numbers1 = new ArrayList<>();
+    private List<Integer> numbers2 = new ArrayList<>();
 
-    @Override
-    public void run() {
-        taskBody();
+    public Number() {
+        completeLists();
     }
 
-    private void taskBody() {
-        numbers1 = numbers();
-        numbers2 = numbers();
-    }
-
-    private List<Integer> numbers() {
-        List<Integer> numbers = new ArrayList<>();
-
+    public void completeLists() {
         for (int i = 0; i < 100; i++) {
-            numbers.add(random.nextInt(20));
+            numbers1.add(random.nextInt(20));
+            numbers2.add(random.nextInt(20));
         }
+    }
+
+    public List<Integer> getNumbers() {
         return numbers;
+    }
+
+    public List<Integer> getNumbers1() {
+        return numbers1;
+    }
+
+    public List<Integer> getNumbers2() {
+        return numbers2;
     }
 }

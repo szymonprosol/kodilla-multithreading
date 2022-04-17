@@ -5,10 +5,10 @@ public class ProcessB implements Runnable {
     public void run() {
         try {
             Thread.sleep(50);
-            synchronized (ResourceB.class) {
+            synchronized (ResourceA.class) {
                 System.out.println("Process B, part 1");
                 Thread.sleep(50);
-                synchronized (ResourceA.class) {
+                synchronized (ResourceB.class) {
                     System.out.println("Process B, part 2");
                 }
             }

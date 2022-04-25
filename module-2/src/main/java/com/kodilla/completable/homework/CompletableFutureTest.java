@@ -9,14 +9,16 @@ public class CompletableFutureTest {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         final BookCreator bookCreator = new BookCreator();
-        /*final CompletableFuture<Void> futureBook = bookCreator.create()
-                .thenCompose(book -> {
-
+        final CompletableFuture<Void> futureBook = bookCreator.create()
+                .thenApply(book -> {
+                    book.setSignature("Signature");
+                    return book;
                 })
+                .thenAccept(book -> System.out.println(book));
 
 
         sleep(1);
         System.out.println("Doing something else");
-        futureBook.get();*/
+        futureBook.get();
     }
 }

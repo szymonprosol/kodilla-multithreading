@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 public class App {
 
-    /*private static final PersonProvider personProvider = new PersonProvider();
+    private static final PersonProvider personProvider = new PersonProvider();
     private static final PersonProvider2 personProvider2 = new PersonProvider2();
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         personProvider.providePersons().thenCompose(persons -> {
             final List<CompletableFuture<Person>> updatedPersons = updatePersons(persons);
             return collectAllPersonsFutures(updatedPersons);
@@ -18,7 +18,7 @@ public class App {
 
 
     private static List<CompletableFuture<Person>> updatePersons(List<Person> persons) {
-        List<CompletableFuture<Person>> x =  personProvider2.providePersons().thenApply(persons1 -> persons1)
+        List<CompletableFuture<Person>> x =  personProvider2.providePersons().thenCombine()
     }
 
     private static CompletableFuture<List<Person>> collectAllPersonsFutures(List<CompletableFuture<Person>> updatedPersons) {

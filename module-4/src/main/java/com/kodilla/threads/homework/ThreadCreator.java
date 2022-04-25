@@ -1,6 +1,6 @@
 package com.kodilla.threads.homework;
 
-public class ThreadCreator implements Runnable {
+public class ThreadCreator extends Thread {
 
     private final int num;
 

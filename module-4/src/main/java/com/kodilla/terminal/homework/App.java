@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class App {
 
-    private static final PersonProvider personProvider = new PersonProvider();
+    /*private static final PersonProvider personProvider = new PersonProvider();
     private static final PersonProvider2 personProvider2 = new PersonProvider2();
 
     public static void main(String[] args) {
@@ -32,5 +32,5 @@ public class App {
         System.out.println("");
         System.out.println("----APP KODILLA----");
         System.out.println(updatedPersons);
-    }
+    }*/
 }

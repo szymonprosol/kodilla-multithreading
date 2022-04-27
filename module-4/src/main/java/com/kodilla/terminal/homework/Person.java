@@ -1,5 +1,7 @@
 package com.kodilla.terminal.homework;
 
+import java.util.Objects;
+
 public class Person {
 
     private final String firstname;
@@ -22,6 +24,19 @@ public class Person {
 
     public int getAge() {
         return age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age && firstname.equals(person.firstname) && lastname.equals(person.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, age);
     }
 
     @Override

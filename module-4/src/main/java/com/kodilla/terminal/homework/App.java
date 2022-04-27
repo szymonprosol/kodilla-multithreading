@@ -18,12 +18,10 @@ public class App {
 
     private static List<Person> updatePersons(List<Person> persons) {
         return personProvider2.providePersons().thenApply(per -> {
-            for (Person person : persons) {
-                if (!per.contains(person)) {
-                    per.add(person);
-                }
-            }
-            return per;
+            List<Person> listTwoCopy = new ArrayList<>(per);
+            listTwoCopy.removeAll(persons);
+            persons.addAll(listTwoCopy);
+            return persons;
         }).join();
     }
 

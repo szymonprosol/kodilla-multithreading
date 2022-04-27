@@ -23,4 +23,11 @@ public class Person {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" + "firstname: " + firstname
+                + ", lastname: " + lastname
+                + ", age: " + age + '}';
+    }
 }
